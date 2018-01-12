@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - fluentd/kernel
+    - fluentd/limits
+    - fluentd/td-agent

@@ -1,0 +1,185 @@
+I, [2018-01-09T14:16:52.568628 #30189]  INFO -- Kitchen: -----> Starting Kitchen (v1.19.2)
+I, [2018-01-09T14:17:16.396106 #30189]  INFO -- Kitchen: -----> Converging <test-ubuntu-1404>...
+I, [2018-01-09T14:17:37.423787 #30189]  INFO -- Kitchen: -----> Converging <test-ubuntu-1604>...
+I, [2018-01-09T14:17:58.457469 #30189]  INFO -- Kitchen: -----> Creating <test-centos-7>...
+E, [2018-01-09T14:18:06.426086 #30189] ERROR -- Kitchen: ------Exception-------
+E, [2018-01-09T14:18:06.426154 #30189] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2018-01-09T14:18:06.426170 #30189] ERROR -- Kitchen: Message: 3 actions failed.
+>>>>>>     Converge failed on instance <test-ubuntu-1404>.  Please see .kitchen/logs/test-ubuntu-1404.log for more details
+>>>>>>     Converge failed on instance <test-ubuntu-1604>.  Please see .kitchen/logs/test-ubuntu-1604.log for more details
+>>>>>>     Failed to complete #create action: [In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so please visit http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce] on test-centos-7
+E, [2018-01-09T14:18:06.426183 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.426195 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.426206 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:183:in `report_errors'
+E, [2018-01-09T14:18:06.426219 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:174:in `run_action'
+E, [2018-01-09T14:18:06.426231 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command/action.rb:36:in `block in call'
+E, [2018-01-09T14:18:06.426259 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.426271 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command/action.rb:34:in `call'
+E, [2018-01-09T14:18:06.426284 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/cli.rb:52:in `perform'
+E, [2018-01-09T14:18:06.426300 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/cli.rb:193:in `block (2 levels) in <class:CLI>'
+E, [2018-01-09T14:18:06.426312 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2018-01-09T14:18:06.426323 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2018-01-09T14:18:06.426334 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2018-01-09T14:18:06.426345 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2018-01-09T14:18:06.426356 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/bin/kitchen:13:in `block in <top (required)>'
+E, [2018-01-09T14:18:06.426367 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2018-01-09T14:18:06.426379 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/bin/kitchen:13:in `<top (required)>'
+E, [2018-01-09T14:18:06.426391 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/bin/kitchen:22:in `load'
+E, [2018-01-09T14:18:06.426401 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/bin/kitchen:22:in `<main>'
+E, [2018-01-09T14:18:06.426412 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `eval'
+E, [2018-01-09T14:18:06.426423 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `<main>'
+E, [2018-01-09T14:18:06.426434 #30189] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-01-09T14:18:06.426444 #30189] ERROR -- Kitchen: -Composite Exception--
+E, [2018-01-09T14:18:06.426455 #30189] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
+E, [2018-01-09T14:18:06.426472 #30189] ERROR -- Kitchen: Message: Converge failed on instance <test-ubuntu-1404>.  Please see .kitchen/logs/test-ubuntu-1404.log for more details
+E, [2018-01-09T14:18:06.426485 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.426496 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.426506 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:83:in `rescue in call'
+E, [2018-01-09T14:18:06.426517 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:86:in `call'
+E, [2018-01-09T14:18:06.426528 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:393:in `block in converge_action'
+E, [2018-01-09T14:18:06.426539 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.426550 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.426560 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.426571 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.426582 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:389:in `converge_action'
+E, [2018-01-09T14:18:06.426593 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.426604 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.426615 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.426626 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.426636 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.426647 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.426659 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.426669 #30189] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-01-09T14:18:06.426680 #30189] ERROR -- Kitchen: ---Nested Exception---
+E, [2018-01-09T14:18:06.426690 #30189] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2018-01-09T14:18:06.426700 #30189] ERROR -- Kitchen: Message: SSH session could not be established
+E, [2018-01-09T14:18:06.426711 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.426721 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.426731 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:83:in `rescue in call'
+E, [2018-01-09T14:18:06.426742 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:86:in `call'
+E, [2018-01-09T14:18:06.426753 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:393:in `block in converge_action'
+E, [2018-01-09T14:18:06.426764 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.426775 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.426789 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.426801 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.426813 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:389:in `converge_action'
+E, [2018-01-09T14:18:06.426824 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.426834 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.426845 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.426874 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.426886 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.426897 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.426908 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.426919 #30189] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-01-09T14:18:06.426930 #30189] ERROR -- Kitchen: -Composite Exception--
+E, [2018-01-09T14:18:06.426940 #30189] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
+E, [2018-01-09T14:18:06.426950 #30189] ERROR -- Kitchen: Message: Converge failed on instance <test-ubuntu-1604>.  Please see .kitchen/logs/test-ubuntu-1604.log for more details
+E, [2018-01-09T14:18:06.426961 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.426971 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.426982 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:83:in `rescue in call'
+E, [2018-01-09T14:18:06.426992 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:86:in `call'
+E, [2018-01-09T14:18:06.427003 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:393:in `block in converge_action'
+E, [2018-01-09T14:18:06.427014 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.427025 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.427036 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.427047 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.427058 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:389:in `converge_action'
+E, [2018-01-09T14:18:06.427069 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.427080 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.427090 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.427101 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.427115 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.427127 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.427138 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.427151 #30189] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-01-09T14:18:06.427169 #30189] ERROR -- Kitchen: ---Nested Exception---
+E, [2018-01-09T14:18:06.427187 #30189] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2018-01-09T14:18:06.427205 #30189] ERROR -- Kitchen: Message: SSH session could not be established
+E, [2018-01-09T14:18:06.427224 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.427236 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.427247 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:83:in `rescue in call'
+E, [2018-01-09T14:18:06.427258 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/provisioner/base.rb:86:in `call'
+E, [2018-01-09T14:18:06.427270 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:393:in `block in converge_action'
+E, [2018-01-09T14:18:06.427281 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.427292 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.427304 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.427315 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.427326 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:389:in `converge_action'
+E, [2018-01-09T14:18:06.427337 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.427348 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.427359 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.427371 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.427383 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.427394 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.427406 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.427417 #30189] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-01-09T14:18:06.427428 #30189] ERROR -- Kitchen: -Composite Exception--
+E, [2018-01-09T14:18:06.427439 #30189] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2018-01-09T14:18:06.427450 #30189] ERROR -- Kitchen: Message: Failed to complete #create action: [In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so please visit http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce] on test-centos-7
+E, [2018-01-09T14:18:06.427461 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.427475 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.427487 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/plugins/raise_response_errors.rb:15:in `call'
+E, [2018-01-09T14:18:06.427542 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/jsonvalue_converter.rb:20:in `call'
+E, [2018-01-09T14:18:06.427558 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/idempotency_token.rb:18:in `call'
+E, [2018-01-09T14:18:06.427569 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/param_converter.rb:20:in `call'
+E, [2018-01-09T14:18:06.427581 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/plugins/response_target.rb:21:in `call'
+E, [2018-01-09T14:18:06.427592 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/request.rb:70:in `send_request'
+E, [2018-01-09T14:18:06.427603 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/base.rb:207:in `block (2 levels) in define_operation_methods'
+E, [2018-01-09T14:18:06.427614 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/request.rb:24:in `call'
+E, [2018-01-09T14:18:06.427625 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operations.rb:41:in `call'
+E, [2018-01-09T14:18:06.427636 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operations.rb:87:in `call'
+E, [2018-01-09T14:18:06.427647 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operation_methods.rb:19:in `block in add_operation'
+E, [2018-01-09T14:18:06.427658 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/aws/client.rb:57:in `create_instance'
+E, [2018-01-09T14:18:06.427669 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/ec2.rb:354:in `submit_server'
+E, [2018-01-09T14:18:06.427681 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/ec2.rb:187:in `create'
+E, [2018-01-09T14:18:06.427694 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `public_send'
+E, [2018-01-09T14:18:06.427705 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `block in perform_action'
+E, [2018-01-09T14:18:06.427716 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.427727 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.427738 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.427749 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.427760 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `perform_action'
+E, [2018-01-09T14:18:06.427771 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:379:in `create_action'
+E, [2018-01-09T14:18:06.427782 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.427792 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.427807 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.427820 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.427832 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.427844 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.427855 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.427866 #30189] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-01-09T14:18:06.427877 #30189] ERROR -- Kitchen: ---Nested Exception---
+E, [2018-01-09T14:18:06.427887 #30189] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2018-01-09T14:18:06.427897 #30189] ERROR -- Kitchen: Message: Failed to complete #create action: [In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so please visit http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce]
+E, [2018-01-09T14:18:06.427908 #30189] ERROR -- Kitchen: ----------------------
+E, [2018-01-09T14:18:06.427918 #30189] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-01-09T14:18:06.427929 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/plugins/raise_response_errors.rb:15:in `call'
+E, [2018-01-09T14:18:06.427940 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/jsonvalue_converter.rb:20:in `call'
+E, [2018-01-09T14:18:06.427951 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/idempotency_token.rb:18:in `call'
+E, [2018-01-09T14:18:06.427962 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/param_converter.rb:20:in `call'
+E, [2018-01-09T14:18:06.427973 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/plugins/response_target.rb:21:in `call'
+E, [2018-01-09T14:18:06.427984 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/request.rb:70:in `send_request'
+E, [2018-01-09T14:18:06.427996 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/base.rb:207:in `block (2 levels) in define_operation_methods'
+E, [2018-01-09T14:18:06.428007 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/request.rb:24:in `call'
+E, [2018-01-09T14:18:06.428018 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operations.rb:41:in `call'
+E, [2018-01-09T14:18:06.428029 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operations.rb:87:in `call'
+E, [2018-01-09T14:18:06.428040 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operation_methods.rb:19:in `block in add_operation'
+E, [2018-01-09T14:18:06.428051 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/aws/client.rb:57:in `create_instance'
+E, [2018-01-09T14:18:06.428062 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/ec2.rb:354:in `submit_server'
+E, [2018-01-09T14:18:06.428073 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/ec2.rb:187:in `create'
+E, [2018-01-09T14:18:06.428090 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `public_send'
+E, [2018-01-09T14:18:06.428111 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `block in perform_action'
+E, [2018-01-09T14:18:06.428133 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.428148 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.428160 #30189] ERROR -- Kitchen: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.428195 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.428215 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `perform_action'
+E, [2018-01-09T14:18:06.428235 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:379:in `create_action'
+E, [2018-01-09T14:18:06.428253 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.428271 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.428290 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.428309 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.428322 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.428333 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.428347 #30189] ERROR -- Kitchen: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.428365 #30189] ERROR -- Kitchen: ----End Backtrace-----

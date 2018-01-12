@@ -1,0 +1,43 @@
+I, [2018-01-09T14:17:58.457527 #30189]  INFO -- test-centos-7: -----> Creating <test-centos-7>...
+I, [2018-01-09T14:18:06.267343 #30189]  INFO -- test-centos-7: Detected platform: centos version 7 on x86_64. Instance Type: t2.micro. Default username: centos (default).
+I, [2018-01-09T14:18:06.267551 #30189]  INFO -- test-centos-7: If you are not using an account that qualifies under the AWS
+free-tier, you may be charged to run these suites. The charge
+should be minimal, but neither Test Kitchen nor its maintainers
+are responsible for your incurred costs.
+
+E, [2018-01-09T14:18:06.422544 #30189] ERROR -- test-centos-7: Create failed on instance <test-centos-7>.
+E, [2018-01-09T14:18:06.422858 #30189] ERROR -- test-centos-7: ------Exception-------
+E, [2018-01-09T14:18:06.423000 #30189] ERROR -- test-centos-7: Class: Aws::EC2::Errors::OptInRequired
+E, [2018-01-09T14:18:06.423066 #30189] ERROR -- test-centos-7: Message: In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so please visit http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce
+E, [2018-01-09T14:18:06.423115 #30189] ERROR -- test-centos-7: ----------------------
+E, [2018-01-09T14:18:06.423164 #30189] ERROR -- test-centos-7: ------Backtrace-------
+E, [2018-01-09T14:18:06.423212 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/plugins/raise_response_errors.rb:15:in `call'
+E, [2018-01-09T14:18:06.423256 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/jsonvalue_converter.rb:20:in `call'
+E, [2018-01-09T14:18:06.423321 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/idempotency_token.rb:18:in `call'
+E, [2018-01-09T14:18:06.423361 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/aws-sdk-core/plugins/param_converter.rb:20:in `call'
+E, [2018-01-09T14:18:06.423388 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/plugins/response_target.rb:21:in `call'
+E, [2018-01-09T14:18:06.423412 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/request.rb:70:in `send_request'
+E, [2018-01-09T14:18:06.423446 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-core-2.10.114/lib/seahorse/client/base.rb:207:in `block (2 levels) in define_operation_methods'
+E, [2018-01-09T14:18:06.423473 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/request.rb:24:in `call'
+E, [2018-01-09T14:18:06.423557 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operations.rb:41:in `call'
+E, [2018-01-09T14:18:06.423613 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operations.rb:87:in `call'
+E, [2018-01-09T14:18:06.423654 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/aws-sdk-resources-2.10.114/lib/aws-sdk-resources/operation_methods.rb:19:in `block in add_operation'
+E, [2018-01-09T14:18:06.423710 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/aws/client.rb:57:in `create_instance'
+E, [2018-01-09T14:18:06.423758 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/ec2.rb:354:in `submit_server'
+E, [2018-01-09T14:18:06.423807 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/kitchen-ec2-2.0.0/lib/kitchen/driver/ec2.rb:187:in `create'
+E, [2018-01-09T14:18:06.424560 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `public_send'
+E, [2018-01-09T14:18:06.424602 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `block in perform_action'
+E, [2018-01-09T14:18:06.424627 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-01-09T14:18:06.424640 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-01-09T14:18:06.424653 #30189] ERROR -- test-centos-7: /usr/share/rvm/rubies/ruby-2.4.0/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-01-09T14:18:06.424664 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-01-09T14:18:06.424680 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:469:in `perform_action'
+E, [2018-01-09T14:18:06.424692 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:379:in `create_action'
+E, [2018-01-09T14:18:06.424703 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-01-09T14:18:06.424714 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-01-09T14:18:06.424725 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-01-09T14:18:06.424736 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-01-09T14:18:06.424746 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-01-09T14:18:06.424757 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-01-09T14:18:06.424767 #30189] ERROR -- test-centos-7: /home/john/.rvm/gems/ruby-2.4.0/gems/test-kitchen-1.19.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-01-09T14:18:06.424779 #30189] ERROR -- test-centos-7: ----End Backtrace-----
