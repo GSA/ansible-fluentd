@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  setup:
+  test-ubuntu-1404:
     working_directory: ~/ansible-fluentd
     machine:
       ruby:
@@ -15,20 +15,43 @@ jobs:
       - run:
           name: Install test-kitchen
           command: bundle install
-  test-ubuntu-1404:
-    working_directory: ~/ansible-fluentd
-    steps:
       - run:
           name: Run test-kitchen
           command: bundle exec kitchen test test-ubuntu-1404
   test-ubuntu-1604:
     working_directory: ~/ansible-fluentd
+    machine:
+      ruby:
+        version: 2.4
+      services:
+        - docker
+    steps:
+      - checkout
+      - run:
+          name: Install bundler
+          command: gem install bundler
+      - run:
+          name: Install test-kitchen
+          command: bundle install
     steps:
       - run:
           name: Run test-kitchen
           command: bundle exec kitchen test test-ubuntu-1604
   test-centos-7:
     working_directory: ~/ansible-fluentd
+    machine:
+      ruby:
+        version: 2.4
+      services:
+        - docker
+    steps:
+      - checkout
+      - run:
+          name: Install bundler
+          command: gem install bundler
+      - run:
+          name: Install test-kitchen
+          command: bundle install
     steps:
       - run:
           name: Run test-kitchen
@@ -36,15 +59,8 @@ jobs:
 
 workflows:
   version: 2
-  setup-and-test:
+  build:
     jobs:
-      - setup
       - test-ubuntu-1404
-          requires:
-            - setup
-      - test-ubuntu-1604
-          requires:
-            - setup     
+      - test-ubuntu-1604  
       - test-centos-7
-          requires:
-            - setup     
