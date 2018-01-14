@@ -1,14 +1,19 @@
 ---
 driver:
-  name: docker
+  name: ec2
   use_sudo: false
   privileged: true
-  #http_proxy: <%= ENV['http_proxy'] || nil %>
-  #https_proxy: <%= ENV['https_proxy'] || nil %>
+  #aws_ssh_key_id: id_rsa-aws
+  region: us-east-2
+  #iam_profile_name: test-kitchen
+  instance_type: t2.micro
+  associate_public_ip: true  
 
 transport:
-  name: sftp
-  max_ssh_sessions: 5
+  #ssh_key: id_rsa-aws
+  connection_timeout: 10
+  connection_retries: 2
+
 
 provisioner:
   name: ansible_playbook
@@ -21,19 +26,23 @@ provisioner:
   ansible_extra_flags: <%= ENV['ANSIBLE_EXTRA_FLAGS'] %>
   require_ansible_omnibus: false
   ansible_connection: ssh
-  #http_proxy: <%= ENV['http_proxy'] || nil %>
-  #https_proxy: <%= ENV['https_proxy'] || nil %>
-  #Testing - Busser requires Chef to run test suites
   require_chef_for_busser: false
   require_ruby_for_busser: false
 
 platforms:
   - name: ubuntu-14.04
-    driver: 
-    image: rndmh3ro/docker-ubuntu1404-ansible:latest
+    transport:
+      username: ubuntu    
+  - name: ubuntu-16.04
+    transport:
+      username: ubuntu  
+  - name: centos-7
+    transport:
+      username: centos    
 
 suites:
   - name: test
+    
 
 #verifier:
 #  name: inspec

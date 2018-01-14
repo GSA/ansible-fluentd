@@ -1,0 +1,7 @@
+---
+# This task checks for the td_agent service is running
+
+- name: set tdagent_use_service = True, if not defined
+  set_fact:
+    tdagent_use_service: True
+  when: tdagent_use_service is not defined

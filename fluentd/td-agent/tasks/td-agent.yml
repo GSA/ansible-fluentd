@@ -1,32 +1,66 @@
 ---
 
-- name: install dependencies...
-  apt: name={{ item }} state=installed update_cache=yes
-  with_items:
-    - python-pycurl
+- name: mkdir for conf.d
+  file:
+    path: /etc/td-agent/conf.d
+    state: directory
+    owner: td-agent
+    group: td-agent
 
-- name: Add the Treasuredata apt key
-  apt_key: url=http://packages.treasuredata.com/GPG-KEY-td-agent state=present
+- name: rename default td-agent.conf
+  command: creates="/etc/td-agent/td-agent.conf.bak" mv /etc/td-agent/td-agent.conf /etc/td-agent/td-agent.conf.bak
 
-- name: Add apt repository
-  apt_repository: repo='deb [arch={{ td_agent_architecture }}] http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib' state=present
-
-- name: apt-get td-agent
-  apt: name=td-agent update_cache=yes force=yes
-  notify:
-    - restart td-agent
-
-- name: Configure td-agent service
-  lineinfile:
-    path: /etc/init.d/td-agent
-    regexp: "^TD_AGENT_GROUP=td-agent$"
-    line: "TD_AGENT_GROUP=adm"
-    state: present
-
-- name: copy BSP certificate
-  ignore_errors: yes
+- name: copy new td-agent.conf from role's default
   copy:
-    src: roles/fluentd/td-agent/files/cacert.pem
-    dest: /etc/td-agent/bspcert.pem
-    owner: ubuntu
-    mode: 0444
+    src: ../files/td-agent.conf
+    dest: /etc/td-agent/td-agent.conf
+    owner: td-agent
+    group: td-agent
+  when: tdagent_conf_copy is not defined and tdagent_conf_template is not defined
+  notify:
+    - reload td-agent
+
+- name: copy new "td-agent.conf" verbatim from main playbook's
+  copy:
+    src:  "{{ playbook_dir }}/{{ tdagent_conf_copy }}"
+    dest: /etc/td-agent/td-agent.conf
+    owner: td-agent
+    group: td-agent
+  when: tdagent_conf_copy is defined
+  notify:
+    - reload td-agent
+
+- name: copy (from template) new "td-agent.conf" from main playbook's
+  template:
+    src:  "{{ playbook_dir }}/{{ tdagent_conf_template }}"
+    dest: /etc/td-agent/td-agent.conf
+    owner: td-agent
+    group: td-agent
+  when: tdagent_conf_template is defined
+  notify:
+    - reload td-agent
+
+- name: copy other config files from playbook's, if any
+  template:
+    src:  "{{ playbook_dir }}/{{ item.value.src }}"
+    dest: "/etc/td-agent/conf.d/{{ item.value.dest }}"
+    owner: td-agent
+    group: td-agent
+  with_dict: '{{ tdagent_conf_others | default({}) }}'
+  notify:
+    - reload td-agent
+
+#- name: Configure td-agent service
+#  lineinfile:
+#    path: /etc/init.d/td-agent
+#    regexp: "^TD_AGENT_GROUP=td-agent$"
+#    line: "TD_AGENT_GROUP=adm"
+#    state: present
+
+#- name: copy BSP certificate
+#  ignore_errors: yes
+#  copy:
+#    src: roles/fluentd/td-agent/files/cacert.pem
+#    dest: /etc/td-agent/bspcert.pem
+#    owner: ubuntu
+#    mode: 0444

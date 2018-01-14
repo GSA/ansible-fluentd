@@ -8,3 +8,4 @@
     backrefs: no
     backup: yes
   with_items: "{{ limits_configs }}"
+  ignore_errors: True

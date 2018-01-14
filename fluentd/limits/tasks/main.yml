@@ -1,2 +1,2 @@
 ---
-- include: limits.yml tags=limits
+- include_tasks: limits.yml tags=limits

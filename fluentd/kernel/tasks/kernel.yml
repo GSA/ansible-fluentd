@@ -3,5 +3,5 @@
   sysctl: name={{ item.param }}
           value={{ item.value }}
           state=present
-  ignore_errors: True
   with_items: "{{ kernel }}"
+  ignore_errors: True
