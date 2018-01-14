@@ -1,0 +1,21 @@
+
+---
+- name: install apt-related binaries for Ansible to work
+  apt: name={{ item }}  state=present update_cache=yes
+  with_items:
+    - python-software-properties
+    - apt-transport-https
+    - ca-certificates
+
+- name: Add Fluentd apt key.
+  apt_key: url=http://packages.treasuredata.com/GPG-KEY-td-agent state=present
+
+- name: add td-agent repository
+  apt_repository: 
+    repo: 'deb https://packages.treasuredata.com/2/{{ ansible_distribution|lower }}/{{ ansible_distribution_release|lower }}/ {{ ansible_distribution_release|lower }} contrib' 
+    state: present
+
+- name: apt-get td-agent
+  apt: name=td-agent update_cache=yes force=yes
+  notify:
+    - restart td-agent    
