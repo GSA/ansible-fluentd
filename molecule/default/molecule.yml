@@ -1,0 +1,42 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: false # to fix
+  options:
+    config-file: molecule/default/yaml-lint.yml
+platforms:
+  - name: trusty
+    image: ubuntu:trusty
+  - name: bionic
+    image: ubuntu:bionic
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+    enabled: true
+    options:
+      x: ["204,404"]
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
+scenario:
+  name: default
+  test_sequence:
+  - lint
+  - destroy
+  - dependency
+  - syntax
+  - create
+  - prepare
+  - converge
+  #- idempotence  # to fix
+  - verify
+  - cleanup
+  - destroy  
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

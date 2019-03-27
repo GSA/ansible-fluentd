@@ -1,0 +1,46 @@
+---
+# https://docs.fluentd.org/v1.0/articles/before-install
+
+- name: Set Up NTP
+  apt:
+    name: ntp
+    state: present
+    update_cache: true
+  tags:
+    - molecule_notest
+    - ntp
+
+- name: Ensure NTP is started
+  service:
+    name: ntp
+    enabled: yes
+    state: started
+  tags:
+    - molecule_notest
+    - ntp
+
+- name: Increase Max of File Descriptors
+  lineinfile:
+    dest: /etc/security/limits.conf
+    state: present
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    backrefs: no
+    backup: yes
+  with_items:
+    - "{{ limits_configs }}"
+  tags:
+    - molecule_notest
+    - ulimit
+
+- name: Optimize Network Kernel Parameters
+  sysctl:
+    name: "{{ item.param }}"
+    value: "{{ item.value }}"
+    state: present
+  with_items:
+    - "{{ kernel }}"
+  ignore_errors: True
+  tags:
+    - molecule_notest
+    - kernel

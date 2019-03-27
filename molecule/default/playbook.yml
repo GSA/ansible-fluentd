@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+    - name: Update yum cache.
+      yum: update_cache=true
+      when: ansible_os_family == 'Redhat'
+
+  roles:
+    - role: ansible-fluentd
+      vars:
+        tdagent_version: 3.3.0

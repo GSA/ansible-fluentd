@@ -3,9 +3,13 @@
   lineinfile:
     dest: /etc/security/limits.conf
     state: present
-    regexp: "{{item.regexp}}"
+    regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
     backrefs: no
     backup: yes
-  with_items: "{{ limits_configs }}"
-  ignore_errors: True
+  with_items:
+    - "{{ limits_configs }}"
+  #ignore_errors: True
+  tags:
+    - molecule_notest
+    - limit

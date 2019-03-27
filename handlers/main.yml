@@ -1,0 +1,37 @@
+---
+
+- name: reload td-agent
+  service: name=td-agent state=reloaded
+  when:
+   - tdagent_use_service|bool
+   - ansible_facts['distribution_major_version'] == "14"
+
+- name: restart td-agent
+  service: name=td-agent state=restarted
+  when:
+   - tdagent_use_service|bool
+   - ansible_facts['distribution_major_version'] == "14"
+
+- name: stop td-agent
+  service: name=td-agent state=stopped
+  when:
+   - tdagent_use_service|bool
+   - ansible_facts['distribution_major_version'] == "14"
+
+- name: reload td-agent
+  systemd: name=td-agent state=reloaded
+  when:
+   - tdagent_use_service|bool
+   - ansible_facts['distribution_major_version'] > "14"
+
+- name: restart td-agent
+  systemd: name=td-agent state=restarted
+  when:
+   - tdagent_use_service|bool
+   - ansible_facts['distribution_major_version'] > "14"
+
+- name: stop td-agent
+  systemd: name=td-agent state=stopped
+  when:
+   - tdagent_use_service|bool
+   - ansible_facts['distribution_major_version'] > "14"

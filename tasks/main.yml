@@ -1,4 +1,6 @@
 ---
+- name: https://docs.fluentd.org/v1.0/articles/before-install
+  import_tasks: preinstall.yml
 
 - name: set role variables, if necessary
   import_tasks: setup-service-variable.yml
@@ -18,4 +20,4 @@
   import_tasks: plugins.yml
 
 - name: setup agent configuration
-  import_tasks: templates.yml  
+  import_tasks: templates.yml
