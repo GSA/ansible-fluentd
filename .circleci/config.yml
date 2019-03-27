@@ -1,64 +1,26 @@
+---
 version: 2
 jobs:
-  test-ubuntu-1404:
-    working_directory: ~/ansible-fluentd
+  test:
     machine:
-      ruby:
-        version: 2.4
+      python:
+        version: 2.7
       services:
         - docker
+    working_directory: ~/ansible-fluentd
     steps:
       - checkout
       - run:
-          name: Install bundler
-          command: gem install bundler
+          name: Install pipenv
+          command: pip install pipenv
       - run:
-          name: Install test-kitchen
-          command: bundle install
+          name: Install molecule
+          command: pipenv install --dev --system
       - run:
-          name: Run test-kitchen
-          command: bundle exec kitchen test test-ubuntu-1404
-  test-ubuntu-1604:
-    working_directory: ~/ansible-fluentd
-    machine:
-      ruby:
-        version: 2.4
-      services:
-        - docker
-    steps:
-      - checkout
-      - run:
-          name: Install bundler
-          command: gem install bundler
-      - run:
-          name: Install test-kitchen
-          command: bundle install
-      - run:
-          name: Run test-kitchen
-          command: bundle exec kitchen test test-ubuntu-1604
-  test-centos-7:
-    working_directory: ~/ansible-fluentd
-    machine:
-      ruby:
-        version: 2.4
-      services:
-        - docker
-    steps:
-      - checkout
-      - run:
-          name: Install bundler
-          command: gem install bundler
-      - run:
-          name: Install test-kitchen
-          command: bundle install
-      - run:
-          name: Run test-kitchen
-          command: bundle exec kitchen test test-centos-7
-
+          name: Run molecule
+          command: pipenv run test
 workflows:
   version: 2
-  build:
+  test_molecule:
     jobs:
-      - test-ubuntu-1404
-      - test-ubuntu-1604  
-      - test-centos-7
+      - test
