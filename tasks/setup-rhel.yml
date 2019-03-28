@@ -1,11 +1,10 @@
 - name: install libselinux-python binary for Ansible to work
-  yum: 
-    name: libselinux-python 
+  yum:
+    name: libselinux-python
     state: present
 
 - name: add GPG key from Treasure Data, Inc
-  command: rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
-  #rpm_key: key=https://packages.treasuredata.com/GPG-KEY-td-agent validate_certs=no state=present
+  rpm_key: key=https://packages.treasuredata.com/GPG-KEY-td-agent validate_certs=no state=present
 
 - name: add official repository
   copy: src=../files/td.repo dest=/etc/yum.repos.d/td.repo
@@ -19,11 +18,12 @@
   when: tdagent_version is defined
 
 - name: install gcc and libcurlXXX for compiling plugins
-  yum: name={{ item }} state=present
-  with_items:
-    - gcc
-    - libcurl
-    - libcurl-devel
+  yum:
+    name:
+     - gcc
+     - libcurl
+     - libcurl-devel
+    state: present
   when: tdagent_plugins is defined or tdagent_plugins_versions is defined
 
 - name: set INIT status and start
@@ -31,7 +31,7 @@
   when: tdagent_use_service|bool
 
 - name: set INIT status (SysV style)
-  command: /sbin/chkconfig td-agent on
+  service: name=td-agent state=present
   when: not tdagent_use_service|bool
 
 #- name: set INIT status (SysV style)

@@ -1,0 +1,33 @@
+---
+
+td_agent_version: '3.3.0'
+td_agent_architecture: 'amd64'
+tdagent_plugins:
+  - fluent-plugin-multiprocess
+  - fluent-plugin-anonymizer
+  - fluent-plugin-forest
+  - fluent-plugin-record-reformer
+
+_shared_key: key_goes_here 
+secops_elasticsearch_endpoint: bsp-elasticsearch.example.com
+elasticsearch_endpoint: elasticsearch.example.com
+system: 'es'
+
+# FluentD AWS cs_configuration - only use if not running on ec2 instance
+#fluentd_aws_access_key_id: {{ vault_fluentd_aws_access_key_id }}
+#fluentd_aws_secret_access_key: {{ vault_fluentd_aws_access_key_id }}
+
+limits_configs:
+- regexp: root soft nofile 65536
+  line: root soft nofile 65536
+- regexp: root hard nofile 65536
+  line: root hard nofile 65536
+- regexp: '\* soft nofile 65536'
+  line: '* soft nofile 65536'
+- regexp: '\* hard nofile 65536'
+  line: '* hard nofile 65536'
+
+kernel:
+- { param: 'net.ipv4.tcp_tw_recycle', value: '1' }
+- { param: 'net.ipv4.tcp_tw_reuse', value: '1' }
+- { param: 'net.ipv4.ip_local_port_range', value: '"10240 65535"' }

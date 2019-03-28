@@ -4,7 +4,7 @@
   gem:
       name: "{{ item }}"
       executable: /opt/td-agent/embedded/bin/fluent-gem
-      state: latest
+      state: present
       user_install: no
   with_items: "{{ tdagent_plugins | default([]) }}"
   notify:

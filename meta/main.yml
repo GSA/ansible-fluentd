@@ -1,0 +1,20 @@
+---
+galaxy_info:
+  author: "GSA (orginal author -Toshiya Kawasaki"
+  description: "Install td-agent, the distribution of fluentd."
+  license: BSD
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenity
+        - bionic
+    - name: Centos
+      versions:
+        - 7
+        - 6
+  galaxy_tags:
+    - monitoring
+    - fluentd
+dependencies: []
