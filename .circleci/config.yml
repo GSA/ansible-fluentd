@@ -1,26 +1,36 @@
+
 ---
 version: 2
 jobs:
-  test:
-    machine:
-      python:
-        version: 2.7
-      services:
-        - docker
+  build:
+    docker:
+      - image: circleci/python:3.6
+    environment:
+      PIPENV_VENV_IN_PROJECT: 1
     working_directory: ~/ansible-fluentd
     steps:
       - checkout
+      - setup_remote_docker
+      - restore_cache:
+          keys:
+            - v1-pip-{{ checksum "Pipfile.lock" }}
+            - v1-pip-
       - run:
-          name: Install pipenv
-          command: pip install pipenv
+          name: install python dependencies
+          command: |
+            pip install --user --upgrade pipenv
+            pipenv install --dev
+      - save_cache:
+          key: v1-pip-{{ checksum "Pipfile.lock" }}
+          paths:
+            - .venv
       - run:
-          name: Install molecule
-          command: pipenv install --dev --system
-      - run:
-          name: Run molecule
+          name: test
           command: pipenv run test
+
+
 workflows:
   version: 2
-  test_molecule:
+  commit:
     jobs:
-      - test
+      - build
